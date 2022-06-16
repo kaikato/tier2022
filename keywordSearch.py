@@ -25,18 +25,22 @@ counts = counts[counts>0]
 sortedCounts = counts.sort_values(ascending=False)
 
 df = projects.iloc[sortedCounts.index]
-projectList = df[['id', 'title']]
+projectList = df[['id', 'title', 'objective']]
 
 orgs = pd.read_excel("data/xlsx/organization.xlsx")
 
 t = orgs[orgs['projectID'].isin(projectList['id'])]
-companyList = t[['organisationID', 'name']]
-companyList = companyList.drop_duplicates()
-# need to add bounds adjustment for the following slice.
-topProjects = projectList.iloc[0:5]
+companyList = t[['organisationID', 'name', 'country', 'totalCost', 'projectID']]
+companyList = companyList.sort_values(by=['name'])
+#companyList = companyList.drop_duplicates()
+nRow = projectList.shape[0]
+maxSlice = 5
+if nRow < 5: 
+    maxSlice = nRow
+topProjects = projectList.iloc[0:maxSlice]
 
 with pd.ExcelWriter("keywordResults.xlsx") as writer:
-    projectList.to_excel(writer, sheet_name="projects", index=False, float_format="%f", header=["projectID", "projectName"])
+    projectList.to_excel(writer, sheet_name="projects", index=False, float_format="%f", header=["projectID", "projectName", "objective"])
     companyList.to_excel(writer, sheet_name="organizations", index=False, float_format="%f")
     topProjects.to_excel(writer, sheet_name="top_projects", index=False, float_format="%f")
 
