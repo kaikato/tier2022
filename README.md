@@ -1,1 +1,1 @@
-User needs to ensure that the packages numpy, pandas, and openpyxl are installed.
+User needs to ensure that the packages numpy, pandas, typing, PyPDF2, and openpyxl are installed.
