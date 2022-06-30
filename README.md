@@ -1,1 +1,1 @@
-User needs to ensure that the packages numpy, pandas, typing, PyPDF2, and openpyxl are installed.
+Run this program on colab.
