@@ -1,9 +1,107 @@
 h1, h2, h3 {
     font-family:Georgia, 'Times New Roman', Times, serif;
-    color:aqua;
+    text-align: center
+    
 }
 
 p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* th {
+background-color: darkblue;
+color: white;
+}
+*/
+/*tr:nth-child(even) {background-color: #f2f2f2;}*/
+
+/* all the tables */
+#topProjects, #costProjects, #coordinatorCounts, #allCounts, #coordinatorCosts, #allCosts{
+    width:75%;
+    text-align: center;
+    margin: auto;
+    vertical-align: middle; 
+    border: 1px solid lightblue;
+    background-color: aliceblue;
+}
+/*
+@media print {
+    body {
+      margin: 0;
+      box-shadow: none;
+    }
+}
+*/
+
+
+#relevantProjGraph, #costProjGraph, #costsPieGraph, #coordinatorCountsGraph, #allCountsGraph, #coordinatorCostsGraph, #allCostsGraph{
+    margin: auto;
+    border: 2px solid white;
+}
+
+#topRelevance, #topCost{
+    text-align: center;
+}
+
+@media print {
+    #relevantProjGraph, #costProjGraph, #costsPieGraph, #coordinatorCountsGraph, #allCountsGraph, #coordinatorCostsGraph, #allCostsGraph{
+        border: 2px solid white;
+        margin: 30px;
+        max-inline-size: 50%;
+        max-block-size: 50%;
+        max-zoom: 50%;
+        break-inside: avoid;
+    }
+    #keywords{
+        margin: 45px;
+    }
+    #topProjects, #costProjects, #coordinatorCounts, #allCounts, #coordinatorCosts, #allCosts{
+        width:90%;
+        break-inside: avoid;
+    }
+    #coordinatorCountsGraph, #coordinatorCostsGraph{
+        page-break-after: always;
+    }
+}
+
+
+@media print {
+    div {
+      break-inside: avoid;
+    }
+  }
+
+
+header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+    display: none;
+}
+
+
+@media screen{
+    #cost{
+        float:left;
+        width: 52%
+    }
+    #keywords{
+        float:left;
+        width: 40%;
+        padding-right: 8%;
+        padding-top: auto;
+        padding-bottom: auto;
+        text-align: center;
+    }
+}
+
+#title{
+    background-color: white;
+    border: 4px solid rgb(103, 23, 23);
+    padding: 2mm;
+    text-align: center;
+    margin: 60px;
 }
