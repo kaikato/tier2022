@@ -22,8 +22,13 @@ color: white;
 */
 /*tr:nth-child(even) {background-color: #f2f2f2;}*/
 
-/* all the tables */
+/* all the tables 
 #topProjects, #costProjects, #coordinatorCounts, #allCounts, #coordinatorCosts, #allCosts{
+    
+}
+*/
+
+.table{
     width:75%;
     text-align: center;
     margin: auto;
@@ -40,6 +45,14 @@ color: white;
 }
 */
 
+.referText{
+    font-size: small;
+    font-style: italic;
+    position: relative;
+    text-align: right;
+    right: 12.5%;
+}
+
 
 #relevantProjGraph, #costProjGraph, #costsPieGraph, #coordinatorCountsGraph, #allCountsGraph, #coordinatorCostsGraph, #allCostsGraph{
     margin: auto;
@@ -53,7 +66,7 @@ color: white;
 @media print {
     #relevantProjGraph, #costProjGraph, #costsPieGraph, #coordinatorCountsGraph, #allCountsGraph, #coordinatorCostsGraph, #allCostsGraph{
         border: 2px solid white;
-        margin: 30px;
+        margin: 25px;
         max-inline-size: 50%;
         max-block-size: 50%;
         max-zoom: 50%;
@@ -62,21 +75,28 @@ color: white;
     #keywords{
         margin: 45px;
     }
-    #topProjects, #costProjects, #coordinatorCounts, #allCounts, #coordinatorCosts, #allCosts{
+    .table{
         width:90%;
         break-inside: avoid;
     }
     #coordinatorCountsGraph, #coordinatorCostsGraph{
         page-break-after: always;
     }
-}
-
-
-@media print {
     div {
-      break-inside: avoid;
+        break-inside: avoid;
     }
-  }
+    .referText{
+        right: 5%;
+        font-size: 8pt
+    }
+    #costsPieGraph{
+        margin:15%;
+        max-inline-size: 50%;
+        max-block-size: 50%;
+        max-zoom: 50%;
+        padding:0;
+    }
+}
 
 
 header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
