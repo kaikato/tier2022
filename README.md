@@ -2,6 +2,7 @@ keywordSearch.ipynb is the main program. Data is stored in the 'csv' folder. To 
 
 How to update data:
 - download CSV files from the CORDIS website
+- replace the datasets "project" "organization"
 - open your command line and enter "cd {name of directory}"
   - for example, "cd C:\Users\Alger Laptop4\tier2022" for Alger
 - git commmit
